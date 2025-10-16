@@ -1,8 +1,13 @@
 <template>
-  <div class="syrup"></div>
+  <div class="syrup" v-if="currentSyrup.id === 's1'" :style="{backgroundColor: syrups[0].color}"></div>
+  <div class="syrup" v-if="currentSyrup.id === 's2'" :style="{backgroundColor: syrups[1].color}"></div>
+  <div class="syrup" v-if="currentSyrup.id === 's3'" :style="{backgroundColor: syrups[2].color}"></div>
+  <div class="syrup" v-if="currentSyrup.id === 's4'" :style="{backgroundColor: syrups[3].color}"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { currentSyrup, syrups} from "../stores/beverage";
+</script>
 <style lang="scss" scoped>
 .syrup {
   transform: translateY(400%);
